@@ -1,4 +1,4 @@
-.wp-config
-.wp-production
-.wp-local
+wp-config.php
+wp-config-production.php
+wp-config-local.php
 .DS_Store
