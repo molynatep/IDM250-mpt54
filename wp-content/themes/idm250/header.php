@@ -10,7 +10,12 @@
     ?>
 </head>
 <body>
-
-<?php
+<header>
+        <nav>
+            <a href="index.php"><img class="logo" src="wp-content/themes/idm250/dist/img/logo.svg" alt="logo"/></a>
+            <?php
 wp_nav_menu(['theme_location' => 'primary_menu']); ?>
+        </nav>
+    </header>
+
     
