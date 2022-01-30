@@ -7,8 +7,8 @@
 //var_dump(phpversion());
 //echo'</pre>';
 
-if (version_compare('7.4', phpversion(), '>' )) {
-    die('You must be using PHP 7.4 or greater.');
+if (version_compare('8.0', phpversion(), '>' )) {
+    die('You must be using PHP 8.0 or greater.');
 }
 
 
