@@ -6,7 +6,6 @@
             <span class="highlight">HI, I'M MOLYNA.</span></h1>
             <h1>AN ARTIST AND UX/UI DESIGNER</h1>
             <h1>BASED IN PHILADELPHIA, PA.</h1>
-            <h1>This is index.php</h1>
         </div>
         </div>
         <div class="work">
@@ -20,4 +19,3 @@
 </main>
 
 <?php get_footer();
-

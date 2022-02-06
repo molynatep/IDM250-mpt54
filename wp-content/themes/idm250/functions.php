@@ -42,9 +42,9 @@ function include_js_files() {
     wp_enqueue_script(
         'idm250-js',
          get_template_directory_uri() . '/dist/scripts/app.js',
-         [],
-         false,
-         true
+         [], //$deps
+         false, // $version
+         true //$in_footer
     );
 }
 
@@ -58,3 +58,24 @@ function register_theme_navigation()
 }
 
 add_action('after_setup_theme', 'register_theme_navigation');
+
+//function idm_render_menu($menu_name)
+//{
+//    if (!$menu_name) {
+//        return;
+//    }
+
+//    $locations = get_nav_menu_locations();
+//    $menu = wp_get_nav_menu_obj($locations[$menu_name]);
+//    $menu_items = wp_get_nav_menu_items ($menu->term_id, ['orfer' => 'DESC']);
+//    return $menu_items;
+//}
+
+//featured image tabs where you can drag/upload images 
+
+function add_post_thumbnails_support()
+{
+    add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'add_post_thumbnails_support');
+
