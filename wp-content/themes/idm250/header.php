@@ -13,7 +13,7 @@
 <a id="top"></a>
 <header>
         <nav>
-            <a href="front-page.php"><img class="logo" src="/wp-content/themes/idm250/dist/img/logo.svg" alt="logo"/></a>
+            <a href="https://molynatep.com/IDM250/"><img class="logo" src="https://molynatep.com/IDM250/wp-content/themes/idm250/dist/img/logo.svg" alt="logo"></a>
             <?php
 wp_nav_menu(['theme_location' => 'primary_menu']); ?>
         </nav>
