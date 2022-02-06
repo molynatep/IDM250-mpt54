@@ -32,6 +32,12 @@
     font-weight: bold;
     font-style: normal;
   }
+  @font-face {
+    font-family: 'montserrat';
+    src: url('../fonts/Montserrat-SemiBold.woff2') format('woff2');
+    font-weight: medium;
+    font-style: normal;
+  }
  
   html {
     -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
@@ -102,6 +108,9 @@
    float: left;
    padding: 1rem 0;
   }
+  img.logo:hover {
+    opacity: 75%;
+  }
 
 
   /*nav style*/
@@ -165,10 +174,111 @@ nav {
      div.error {
       text-align: center;
     }
-    .red {
-      color: #CF5454;
 
+    h1.oop {
+      font-size: 4.5rem;
     }
+    h1.red {
+      color: #CF5454;
+      font-size: 3.75rem;
+      padding-bottom: 1rem;
+    }
+    div.error>div>p {
+      font-weight: medium;
+      font-size: 1.125rem;
+      margin: .2rem;
+    }
+
+    .back-btn{
+      background-color: #DCE3CC;
+      color: #3A3F67;
+      border-style: none;
+      width: 110px;
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
+    .back-btn:hover{
+      background-color: #C2CEC9;
+      color: white;
+      cursor: pointer;
+      
+    }
+
+/* PROJECTS*/
+
+.projgrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 1rem 60px;
+  background-color: #EEE1DB;
+  padding: 3rem 0 2rem 0;
+  border-radius: 10px;
+  transition: all .3s ease-in-out;
+}
+
+.projgrid:hover {
+  transform: scale(1.03);
+  box-shadow: 3px 3px 7px rgba(33,33,33,.2); 
+}
+
+.hometext>a:hover {
+  color:#3A3F67;
+  text-decoration: none;
+ }
+
+.hometext>a.onpage {
+   color:#3A3F67;
+   text-decoration: none;
+  }
+
+.foodtruck {
+  background-color: #EEF2F9;
+}
+
+.micro {
+  background-color: #f3e5e0;
+}
+
+.meicolor {
+  background-color: #FFF2F2;
+}
+
+.giftcolor {
+  background-color: #F0F5F6;
+}
+
+.proj {
+  width: 350px;
+  border-radius: 5px;
+}
+
+.happy {
+  background-color: #fcf2e0;
+}
+.zodiac {
+  grid-column: 3/6;
+}
+
+.projdesc {
+  grid-column: 9/12;
+  padding: 0 1.5rem;
+}
+
+.projtitle {
+  margin: 0;
+  padding: .5rem 0 .3rem;
+}
+
+.ita {
+  color: #B29292;
+  font-size: .875rem;
+  margin: 0;
+}
+
+.projinfo {
+  line-height: 2;
+  margin: 1rem 0;
+}
 
   /*button up*/
   .btn-top {
@@ -190,6 +300,7 @@ nav {
 .btn-top:hover {
   background: #C2CEC9;
   border:#C2CEC9;
+  cursor: pointer;
 }
 
 .arrow {
@@ -213,14 +324,98 @@ stroke-width: 10;
 transition: all 300ms ease-in-out;
 }
 
-  @media screen and (max-width: 620px) {
-    .introtext {
+/*hover transitions*/
+.btn-top, .back-btn, img.logo, a{
+  transition: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+
+/*MEDIA QUERIES*/
+
+  @media screen and (max-width: 1420px) {
+    .grid {
+       margin: 0 2rem;
+    }
+ 
+ }
+ @media screen and (max-width: 1075px) {
+    h3.microtitle {
+       font-size: 2.3rem;
+    }
+ }
+ 
+ @media screen and (max-width: 880px) {
+    .zodiac, .projdesc{
+       grid-column: 1/13;
+       text-align: center;
+    }
+    .proj {
+       width: 90%;
+    }
+    h3.microtitle {
+       font-size: 3rem;
+    }
+ 
+ }
+ 
+ @media screen and (max-width: 620px) {
+      .introtext {
         padding-top: 3rem;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    .work>h2 {
+        font-size: 2rem;
+    }
+    .grid {
+       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .aboutleft>h1 {
+       font-size: 2.5rem;
+    }
+    .aboutleft>p {
+       margin-top: -1.3rem;
+       font-size: .8rem;
+    }
+    .highlight2 {
+       background-color: #D3DEBC;
+       padding-right: 3rem;
+    }
+    .projtitle, h3.microtitle {
+       font-size: 2rem;
+    }
+    .close {
+       position: fixed;
+       top: 20px;
+       right: 20px;
+       color: #f1f1f1;
+       font-size: 50px;
+       font-weight: bold;
+       transition: 0.3s;
      }
-     h1 {
-         font-size: 3rem;
+ }
+ 
+ @media screen and (max-width: 400px) {
+    .grid {
+       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    ul.menu {
+       margin-right: 1.2rem;
      }
-     .work>h2 {
-         font-size: 2rem;
-     }
-  }
+     .intro>h1 {
+       font-size: 1.9rem;
+    }
+    div.intro {
+       height:75vh;
+    }
+    .work>h2 {
+       font-size: 1.5rem;
+    }
+ }
+ 
+ main>a:hover {
+    text-decoration: none;
+ }
+
