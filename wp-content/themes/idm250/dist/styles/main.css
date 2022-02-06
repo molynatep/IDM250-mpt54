@@ -128,9 +128,10 @@ nav {
      padding-left: 0;
    }
 
+
    /*intro*/
 
-  div.intro {
+  div.intro, div.error {
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -159,6 +160,15 @@ nav {
      stroke-width: 4px;
      padding-bottom: 5rem;
   }
+
+     /*error*/
+     div.error {
+      text-align: center;
+    }
+    .red {
+      color: #CF5454;
+
+    }
 
   /*button up*/
   .btn-top {
