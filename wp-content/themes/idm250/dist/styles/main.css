@@ -178,8 +178,8 @@ nav {
     line-height: 44px;
 }
 .btn-top:hover {
-  background: #B9D3C9;
-  border:#B9D3C9;
+  background: #C2CEC9;
+  border:#C2CEC9;
 }
 
 .arrow {
@@ -195,12 +195,12 @@ nav {
 
 .up:hover polyline,
 .up:focus polyline {
-stroke-width: 15;
+stroke-width: 10;
 }
 
 .up:active polyline {
-stroke-width: 15;
-transition: all 100ms ease-in-out;
+stroke-width: 10;
+transition: all 300ms ease-in-out;
 }
 
   @media screen and (max-width: 620px) {

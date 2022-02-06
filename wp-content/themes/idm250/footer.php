@@ -1,4 +1,4 @@
-<button id="goTop" class="btn-top">
+<a href="#top"><button class="btn-top">
   
   <svg class="arrow up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="5 0 50 80" xml:space="preserve">
     <polyline fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" points="
@@ -6,6 +6,7 @@
   </svg>
   
 </button>
+</a>
 <?php
     wp_footer();
 ?>
