@@ -5,11 +5,12 @@
 <div class="workshero">
         <h1 class=""><?php the_title(); ?></h1>
     </div>
+
     <div class="portfoliocontent">
-        <div>
+        <div class="contentwidth">
         <?php the_content(); ?>
-</div>
-</div>
+        </div>
+    </div>
 </div>
 <?php endwhile; ?>
 
