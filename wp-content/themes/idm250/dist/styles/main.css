@@ -57,6 +57,7 @@
 
   main {
     padding-top: 5rem;
+    margin-bottom: 3rem;
   }
 
   p {
@@ -164,7 +165,7 @@ nav {
      line-height: .6;
   }
  
-  svg {
+  div.line>svg {
      stroke:#3A3F67;
      stroke-width: 4px;
      padding-bottom: 5rem;
@@ -279,6 +280,45 @@ nav {
   line-height: 2;
   margin: 1rem 0;
 }
+
+/*SEARCH*/
+  .search{
+    display: flex;
+    justify-content: center;
+  }
+  .searchbar {
+    padding: 1.2rem 2.5rem 1rem;
+    margin: 0 4rem;
+    width: 800px;
+    border-radius: 30px;
+    border-style: none;
+    box-shadow: inset 0 4px 4px #e6e6e6;
+    font-family: 'bebas', 'montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #3A3F67;
+  }
+  .results>p {
+    margin: 2rem 4rem .7rem;
+    font-size: 1.5rem;
+  }
+  .path2 {
+    stroke-dasharray: 1120;
+  /*   stroke-dashoffset: 800; */
+    animation: draw1 .8s linear alternate;
+  }
+  .lineresults{
+    margin: 0 4rem;
+  }
+  
+  @keyframes draw1 {
+    from {
+      stroke-dashoffset: 1120;
+    }
+    to {
+      stroke-dashoffset: 2240;
+    }
+  }
+
 
   /*button up*/
   .btn-top {
