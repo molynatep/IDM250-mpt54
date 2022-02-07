@@ -17,7 +17,7 @@
               </svg>
         </div>
         <div class="hometext">
-        <a href="peteslittlelunchbox.html" target="_blank">
+        <a href="http://molynatep.com/IDM250/petes-little-lunch-box/"  target="_blank">
             <div class= "projgrid foodtruck">
                 <div class="zodiac">
                     <picture>
@@ -60,6 +60,7 @@
                     </div>
                     </a>
 </div>
+<a href="http://molynatep.com/IDM250/portfolio-listing/"><h2 class="all">VIEW ALL ></h2></a>
 </main>
 
 <?php get_footer();

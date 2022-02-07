@@ -281,6 +281,22 @@ nav {
   margin: 1rem 0;
 }
 
+.all {
+  margin: .5rem 4rem 4.5rem;
+  float: right;
+}
+
+.all:hover {
+  text-decoration: underline;
+}
+
+/*PORTFOLIO LISTING*/
+.workshero {
+  background-color: #EFE5E0;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
 /*SEARCH*/
   .search{
     display: flex;
@@ -368,6 +384,17 @@ transition: all 300ms ease-in-out;
 .btn-top, .back-btn, img.logo, a{
   transition: 0.25s;
   transition-timing-function: ease-in-out;
+}
+
+/*PORTFOLIO DETAILS*/
+.portfoliocontent {
+  display: flex;
+  justify-content: center;
+}
+.wp-block-image>img {
+  width: 100%;
+  margin: 1rem 0;
+  
 }
 
 

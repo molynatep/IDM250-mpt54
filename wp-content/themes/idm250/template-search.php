@@ -7,7 +7,7 @@
         <input class="searchbar" type="text" placeholder="SEARCH">
     </div>
     <div class="results">
-    <p>Viewing 3 results for HTML</p>
+    <p>Viewing 2 results for HTML</p>
     </div>
     <div class="lineresults">
     <svg version="1.1" id="line_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="5px" xml:space="preserve">
@@ -19,7 +19,7 @@
             <div class= "projgrid">
                 <div class="zodiac">
                     <picture>
-                        <img class="proj" src="/wp-content/themes/idm250/dist/img/zodiac.png">
+                        <img class="proj" src="https://molynatep.com/IDM250/wp-content/themes/idm250/dist/img/zodiac.png">
                     </picture>
                 </div>
                 <div class="projdesc">
@@ -33,7 +33,7 @@
                 <div class= "projgrid micro">
                     <div class="zodiac">
                         <picture>
-                            <img class="proj" src="/wp-content/themes/idm250/dist/img/microinteractions.png">
+                            <img class="proj" src="https://molynatep.com/IDM250/wp-content/themes/idm250/dist/img/microinteractions.png">
                         </picture>
                     </div>
                     <div class="projdesc">
