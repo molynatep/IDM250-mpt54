@@ -9,7 +9,7 @@
     wp_head();
     ?>
 </head>
-<body>
+<body <?php body_class();?>>
 <a id="top"></a>
 <header>
         <nav>
