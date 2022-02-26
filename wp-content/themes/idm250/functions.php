@@ -59,17 +59,24 @@ function register_theme_navigation()
 
 add_action('after_setup_theme', 'register_theme_navigation');
 
-//function idm_render_menu($menu_name)
-//{
-//    if (!$menu_name) {
-//        return;
-//    }
+/*
+ * Render custom menu
+ *
+ * @param string $menu_name
+ * @return array
+ */
+function idm_render_menu($menu_name)
+{
+    if (!$menu_name) {
+        return;
+    }
+    // return an array of menu locations that are registered
+    $locations = get_nav_menu_locations();
+    $menu = wp_get_nav_menu_object($locations[$menu_name]);
+    $menu_items = wp_get_nav_menu_items($menu->term_id, ['order' => 'DESC']);
+    return $menu_items;
+}
 
-//    $locations = get_nav_menu_locations();
-//    $menu = wp_get_nav_menu_obj($locations[$menu_name]);
-//    $menu_items = wp_get_nav_menu_items ($menu->term_id, ['orfer' => 'DESC']);
-//    return $menu_items;
-//}
 
 //featured image tabs where you can drag/upload images 
 
@@ -79,3 +86,90 @@ function add_post_thumbnails_support()
 }
 add_action('after_setup_theme', 'add_post_thumbnails_support');
 
+/**
+ * Register Custom Post types
+ *
+ * @link https://developer.wordpress.org/reference/functions/register_post_type/
+ * @return void
+ */
+function idm_register_custom_post_type()
+{
+    $args = [
+        'label' => 'Project',
+        'labels' => [
+            'name' => 'Projects',
+            'singular_name' => 'Project'
+        ],
+        'supports' => [
+            'title',
+            'editor',
+            'author',
+            'thumbnail',
+            'excerpt',
+            'trackbacks',
+            'custom-fields',
+            'comments',
+            'revisions',
+            'page-attributes',
+            'post-formats'
+        ],
+        // 'taxonomies'            => ['category', 'post_tag'],
+        'hierarchical' => false,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 5,
+        'show_in_admin_bar' => true,
+        'show_in_nav_menus' => true,
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable' => true,
+        'show_in_rest' => true,
+        // Dash Icons https://developer.wordpress.org/resource/dashicons/#media-audio
+        'menu_icon' => 'dashicons-clipboard'
+        // 'menu_icon'             => get_stylesheet_directory_uri() . '/static/images/icons/industries.png'
+    ];
+
+    register_post_type('idm-projects', $args);
+}
+add_action('init', 'idm_register_custom_post_type');
+
+/**
+ * register taxonomies
+ *
+ * @link https://developer.wordpress.org/reference/functions/register_taxonomy/
+ * @return void
+ */
+function idm_register_taxonomies()
+{
+    $labels = [
+        'name' => _x('Categories', 'taxonomy general name'),
+        'singular_name' => _x('Category', 'taxonomy singular name'),
+        'search_items' => __('Search Categories'),
+        'all_items' => __('All Categories'),
+        'parent_item' => __('Parent Category'),
+        'parent_item_colon' => __('Parent Category:'),
+        'edit_item' => __('Edit Category'),
+        'update_item' => __('Update Category'),
+        'add_new_item' => __('Add New Category'),
+        'new_item_name' => __('New Category Name'),
+        'menu_name' => __('Categories'),
+    ];
+
+    register_taxonomy(
+        'idm-project-categories',
+        ['idm-projects'],
+        [
+            'hierarchical' => true,
+            'labels' => $labels,
+            'show_ui' => true,
+            'show_in_rest' => true,
+            'show_admin_column' => true,
+            'query_var' => true,
+            'rewrite' => ['slug' => 'project-categories'],
+        ]
+    );
+}
+
+add_action('init', 'idm_register_taxonomies', 0);
