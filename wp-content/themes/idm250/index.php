@@ -1,23 +1,37 @@
 <?php get_header(); ?>
-<main>
-        <div class="intro">
-            <div>
-            <h1 class="introtext">
-            <span class="highlight">HI, I'M MOLYNA.</span></h1>
-            <h1>AN ARTIST AND UX/UI DESIGNER</h1>
-            <h1>BASED IN PHILADELPHIA, PA.</h1>
-            <h1>This is index.php</h1>
-        </div>
-        </div>
-        <div class="work">
-            <h2>SEE MY WORK</h2>
-        </div>
-        <div class="line">
-            <svg height="50" width="4">
-                <line x1="0" x2="0" y1="0" y2="80"/>
-              </svg>
-        </div>
-</main>
+<?php
+ $args = [
+     's' => $_GET['s'],
+     'post_type' => $_GET['post_type'],
+ ];
+ $search_query = new WP_Query($args)
+?>
+<?php
+get_template_part(
+    'components/heros/home-hero',
+    null,
+    [
+        'heading' => 'Search results for "' . $_GET['s'] . '"',
+        'body' => ''
+    ]
+);
+?>
+
+<div class="container search-results">
+  <?php
+  if ($search_query->have_posts()) {
+      while ($search_query->have_posts()) : $search_query->the_post();
+      get_template_part('components/project-teaser');
+      endwhile;
+      wp_reset_postdata();
+  } else {
+      // no results
+      echo '<p>Sorry, there are no results</p>';
+  }
+
+?>
+
+</div>
 
 <?php get_footer();
 
