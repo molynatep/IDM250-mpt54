@@ -2,15 +2,17 @@
 <main>
 <?php while (have_posts()) : the_post(); ?>
 <div class="">
-    <h1 class=""><?php the_title(); ?></h1>
+<div class="workshero">
+        <h1 class=""><?php the_title(); ?></h1>
+    </div>
 
-    <div class="">
+    <div class="portfoliocontent">
+        <div class="contentwidth">
         <?php the_content(); ?>
-</div>
+        </div>
+    </div>
 </div>
 <?php endwhile; ?>
+
 </main>
-
-
-
 <?php get_footer();
