@@ -26,9 +26,9 @@
                     </picture>
                 </div>
                 <div class="projdesc">
-                    <h3 class="projtitle">FOOD TRUCK APP</h3>
-                    <p class="ita">UX/UI Design</p>
-                    <p class="projinfo">Created a high-fidelity app prototype based on user research.</p>
+                    <h3 class="projtitle"><?php echo get_field('project_title', 129 );?></h3>
+                    <p class="ita"><?php echo get_field('project_type', 129 );?></p>
+                    <p class="projinfo"><?php echo get_field('project_description', 129 );?></p>
                 </div>
                 </div>
                 </a>

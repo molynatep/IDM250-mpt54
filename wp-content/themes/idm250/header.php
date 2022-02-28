@@ -16,7 +16,7 @@
             <a href="https://molynatep.com/IDM250/"><img class="logo" src="https://molynatep.com/IDM250/wp-content/themes/idm250/dist/img/logo.svg" alt="logo"></a>
             <?php
 wp_nav_menu(['theme_location' => 'primary_menu']); 
-get_template_part('search-form');
+/*get_template_part('search-form');*/
 ?>
         </nav>
     </header>
