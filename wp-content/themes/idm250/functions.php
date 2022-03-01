@@ -87,6 +87,20 @@ function add_post_thumbnails_support()
 }
 add_action('after_setup_theme', 'add_post_thumbnails_support');
 
+function idm_register_sidebars()
+{
+    register_sidebar([
+        'name' => __('Primary Sidebar', 'theme_name'),
+        'id' => 'sidebar-primary',
+    ]);
+    register_sidebar([
+        'name' => __('Secondary Sidebar', 'theme_name'),
+        'id' => 'secondary-primary',
+    ]);
+}
+
+add_action('widgets_init', 'idm_register_sidebars');
+
 /**
  * Register Custom Post types
  *
@@ -127,6 +141,8 @@ function idm_register_custom_post_type()
         'exclude_from_search' => false,
         'publicly_queryable' => true,
         'show_in_rest' => true,
+        'rewrite' => ['slug' => 'projects'],
+
         // Dash Icons https://developer.wordpress.org/resource/dashicons/#media-audio
         'menu_icon' => 'dashicons-clipboard'
         // 'menu_icon'             => get_stylesheet_directory_uri() . '/static/images/icons/industries.png'
@@ -168,9 +184,34 @@ function idm_register_taxonomies()
             'show_in_rest' => true,
             'show_admin_column' => true,
             'query_var' => true,
-            'rewrite' => ['slug' => 'project-categories'],
+            'rewrite' => ['slug' => 'works'],
         ]
     );
 }
 
 add_action('init', 'idm_register_taxonomies', 0);
+
+//get attachment meta
+/**
+ * Get asset meta data and return it in an array
+ *
+ * @param number $attachment_id - Asset ID. You can get this by calling get_post_thumbnail_id()
+ * @return void
+ */
+function idm_get_asset_by_id($attachment_id)
+{
+    // If no image, return false
+    if (!wp_get_attachment_image_url($attachment_id, '')) {
+        return false;
+    }
+    $attachment = get_post($attachment_id);
+
+    return [
+        'alt' => get_post_meta($attachment->ID, '_wp_attachment_image_alt', true),
+        'caption' => $attachment->post_excerpt,
+        'description' => $attachment->post_content,
+        'href' => get_permalink($attachment->ID),
+        'src' => wp_get_attachment_image_url($attachment_id, ''),
+        'title' => $attachment->post_title
+    ];
+}
