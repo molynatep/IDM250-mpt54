@@ -290,8 +290,14 @@ nav {
   text-align: center;
 }
 
+a.nolinkstyle:hover {
+    text-decoration: none;
+    color: #384079;
+
+}
+
 /*SEARCH*/
-  .search{
+  div.search{
     background-color: #FFF;
     position: relative;
     border-radius: 30px;
@@ -352,6 +358,14 @@ nav {
     to {
       stroke-dashoffset: 2240;
     }
+  }
+
+  .noresults {
+    font-size: 1.5rem;
+    font-family: 'bebas', sans-serif;
+    display: flex;
+    justify-content: center;
+
   }
 
 

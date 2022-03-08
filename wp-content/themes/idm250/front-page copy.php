@@ -4,7 +4,7 @@
         <div class="intro">
             <div>
             <h1 class="introtext">
-            <span class="highlight">HI, I'M MOLYNA</span></h1>
+            <span class="highlight">HI, I'M MOLYNA.</span></h1>
             <h1>AN ARTIST AND UX/UI DESIGNER</h1>
             <h1>BASED IN PHILADELPHIA, PA.</h1>
         </div>
@@ -18,22 +18,20 @@
               </svg>
         </div>
         <div class="hometext">
-        <?php
-$featured_posts = get_field('featured_posts');
-if( $featured_posts ): ?>
-    <ul>
-    <?php foreach( $featured_posts as $post ): 
-
-// Setup this post for WP functions (variable must be named $post).
-setup_postdata($post); ?>
-<?php get_template_part('components/project-teaser'); ?>
-    <?php endforeach; ?>
-    </ul>
-    <?php 
-    // Reset the global post object so that the rest of the page works correctly.
-    wp_reset_postdata(); ?>
-<?php endif; ?>
-
+        <a href="https://molynatep.com/IDM250/idm-projects/petes-little-lunch-box/"  target="_blank">
+            <div class= "projgrid foodtruck">
+                <div class="zodiac">
+                    <picture>
+                        <img class="proj" src="wp-content/themes/idm250/dist/img/lunchboxhero.png">
+                    </picture>
+                </div>
+                <div class="projdesc">
+                    <h3 class="projtitle"><?php echo get_field('project_title', 129 );?></h3>
+                    <p class="ita"><?php echo get_field('project_type', 129 );?></p>
+                    <p class="projinfo"><?php echo get_field('project_description', 129 );?></p>
+                </div>
+                </div>
+                </a>
         <a href="https://molynatep.com/idm231-mpt54/" target="_blank">
             <div class= "projgrid">
                 <div class="zodiac">
