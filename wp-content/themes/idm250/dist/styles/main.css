@@ -423,6 +423,7 @@ transition: all 300ms ease-in-out;
 .portfoliocontent {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 .contentwidth {
