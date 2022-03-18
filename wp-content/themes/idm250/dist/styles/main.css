@@ -597,3 +597,13 @@ h1#table-of-contents {
     text-decoration: none;
  }
 
+ li#block-7, li#block-8{
+   list-style: none;
+ }
+ 
+ aside {
+   position: relative;
+   float: right;
+   padding-top: 2rem;
+   padding-right: 1rem;
+ }
